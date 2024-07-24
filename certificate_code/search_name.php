@@ -36,10 +36,10 @@
         $password = "";
         $dbname = "vlab_iitk_db";
 
-       
+        // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-       
+        // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
@@ -47,9 +47,14 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST['name'];
 
-            $sql = "SELECT * FROM certificate WHERE name = ?";
+            // Update SQL query to use LIKE for partial matches
+            $sql = "SELECT * FROM certificate WHERE name LIKE ?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $name);
+
+            // Use '%' wildcard for LIKE query
+            $param = "%" . $name . "%";
+            $stmt->bind_param("s", $param);
+
             $stmt->execute();
             $result = $stmt->get_result();
 
