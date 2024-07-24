@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Certificate Verification</title>
+</head>
+<body>
+    <h1 class="text-center main-heading">Certificate Verification</h1>
+    <div class="container pt-5 main">
+        <div class="row">
+            <div class="col">
+                <h4 class="text-center heading">Search with Registration no:</h4>
+                <form action="search_registration.php" method="post">
+                    <div class="mb-3">
+                        <label for="registration_no" class="form-label"></label>
+                        <input type="text" id="registration_no" name="registration_no" class="form-control custom-input" required placeholder="Enter the Registration Number:">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn" name="search_by">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <h4 class="text-center heading">Search with Your Name:</h4>
+                <form action="search_name.php" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label"></label>
+                        <input type="text" id="name" name="name" class="form-control custom-input" required placeholder="Enter the Name:">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn" name="search_by">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
