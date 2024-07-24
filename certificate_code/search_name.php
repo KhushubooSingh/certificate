@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Certificate Details</title>
+    <title>Student Details</title>
     <style>
         .centered-box {
             max-width: 800px;
@@ -36,10 +36,10 @@
         $password = "";
         $dbname = "vlab_iitk_db";
 
-        // Create connection
+       
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Check connection
+       
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
