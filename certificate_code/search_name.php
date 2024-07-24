@@ -26,6 +26,11 @@
         .details-row:last-child {
             border-bottom: none;
         }
+        .back-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -51,8 +56,8 @@
             $sql = "SELECT * FROM certificate WHERE name LIKE ?";
             $stmt = $conn->prepare($sql);
 
-            // Use '%' wildcard for LIKE query
-            $param = "%" . $name . "%";
+            // Use '%' wildcard for LIKE query to match names starting with the given string
+            $param = $name . "%";
             $stmt->bind_param("s", $param);
 
             $stmt->execute();
@@ -79,6 +84,7 @@
             } else {
                 echo "<div class='alert alert-warning text-center'>No results found for the name: " . htmlspecialchars($name) . "</div>";
             }
+            echo "<div class='back-button' id='backButton'><button class='btn btn-secondary' onclick='history.back()'>Back</button></div>";
             echo "</div>";
 
             $stmt->close();
@@ -87,5 +93,7 @@
         $conn->close();
         ?>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

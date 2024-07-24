@@ -11,6 +11,11 @@
             max-width: 600px;
             margin: 20px auto;
         }
+        .back-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -21,10 +26,10 @@
         $password = "";
         $dbname = "vlab_iitk_db";
 
-        
+        // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        
+        // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
@@ -86,6 +91,7 @@
             } else {
                 echo "<div class='alert alert-warning text-center'>No results found for the registration number: " . htmlspecialchars($reg_number) . "</div>";
             }
+            echo "<div class='back-button' id='backButton'><button class='btn btn-secondary' onclick='history.back()'>Back</button></div>";
             echo "</div>";
 
             $stmt->close();
@@ -94,5 +100,7 @@
         $conn->close();
         ?>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
