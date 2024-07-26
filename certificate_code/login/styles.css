@@ -94,3 +94,22 @@ form{
     background-color: rgba(0, 0, 0, 0.1); /* Slight background overlay for visibility */
 }
 
+
+/* ---------------- */
+
+/* Ensure the buttons are displayed inline with space between them */
+.row.text-center {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit, .backbutton {
+    margin: 0 10px; /* Adjust the spacing between buttons */
+}
+
+/* Style the back button */
+.backbutton {
+    margin-left: 20px; /* Adjust space between the Submit and Back button */
+}
+
+

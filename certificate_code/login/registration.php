@@ -4,10 +4,11 @@ include('session.php'); // Include the session management file
 
 check_login(); // Ensure the user is logged in
 
+$message = ''; // Initialize message variable
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['register_submit'])) {
         // Handle registration form submission
-        // $sr_no = mysqli_real_escape_string($con, $_POST['srno']);
         $certificate_title = mysqli_real_escape_string($con, $_POST['certificatetitle']);
         $registration_no = mysqli_real_escape_string($con, $_POST['registration_no']);
         $name = mysqli_real_escape_string($con, $_POST['name']);
@@ -22,29 +23,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$certificate_title', '$registration_no', '$name', '$course', '$email', '$contact_no', '$course_duration_from', '$course_duration_to', '$college_name')";
 
         if (mysqli_query($con, $sql)) {
-            $message = '<div class="alert alert-success">Registration successful!</div>';
+            // Redirect with success message
+            header('Location: index_registration.php?status=success');
+            exit();
         } else {
-            $message = '<div class="alert alert-danger">Error: ' . $sql . '<br>' . mysqli_error($con) . '</div>';
+            // Redirect with error message
+            header('Location: index_registration.php?status=error&message=' . urlencode(mysqli_error($con)));
+            exit();
         }
     } else {
-        $message = '<div class="alert alert-warning">Form submission not recognized.</div>';
+        // Redirect with warning message
+        header('Location: index_registration.php?status=warning');
+        exit();
     }
 } else {
-    $message = '<div class="alert alert-warning">Invalid request method.</div>';
+    // Redirect with invalid request message
+    header('Location: index_registration.php?status=invalid');
+    exit();
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Status</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="message-container">
-        <?php echo $message; ?>
-    </div>
-</body>
-</html>

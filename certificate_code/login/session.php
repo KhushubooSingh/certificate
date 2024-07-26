@@ -4,7 +4,7 @@ session_start(); // Start the session
 // Function to check if the user is logged in
 function check_login() {
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-        header('Location: login_html.php'); // Redirect to login page if not logged in
+        header('Location: index_login.php'); // Redirect to login page if not logged in
         exit;
     }
 }
@@ -13,7 +13,7 @@ function check_login() {
 function logout() {
     $_SESSION = array(); // Clear all session variables
     session_destroy(); // Destroy the session
-    header('Location: login_html.php'); // Redirect to login page
+    header('Location: index_login.php'); // Redirect to login page
     exit;
 }
 ?>

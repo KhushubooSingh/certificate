@@ -13,17 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $username = stripcslashes($username);
         $password = stripcslashes($password);
-        $username = mysqli_real_escape_string($con, $username);
-        $password = mysqli_real_escape_string($con, $password);
 
-        $sql = "SELECT * FROM login WHERE username = '$username' AND password = '$password'";
-        $result = mysqli_query($con, $sql);
+        // Use prepared statements for security
+        $sql = "SELECT * FROM login WHERE username = ? AND password = ?";
+        $stmt = mysqli_prepare($con, $sql);
+        mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
         if ($result) {
             $count = mysqli_num_rows($result);
             if ($count == 1) {
                 $_SESSION['loggedin'] = true; // Set session variable
-                header("Location: registration_html.php"); // Redirect to registration page
+                header("Location: index_registration.php"); // Redirect to registration page
                 exit();
             } else {
                 echo "<h1>Login failed. Invalid username or password.</h1>";
