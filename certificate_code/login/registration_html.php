@@ -20,11 +20,11 @@ check_login(); // Ensure the user is logged in
         <h4 class="text-center pt-5 pb-5">Registration Form</h4>
         <form class="mx-auto" action="registration.php" method="POST">
             <div class="row pt-5 justify-content-center">
-                <div class="col-md-6 col-lg-4 mb-2 me-lg-3">
+                <!-- <div class="col-md-6 col-lg-4 mb-2 me-lg-3">
                     <label for="srno">Sr. No. :</label>
                     <input type="text" class="form-control input-field" placeholder="sr. no." id="srno" name="srno" />
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3 me-lg-3">
+                </div> -->
+                <div class="col-md-6 col-lg-4 mb-3 me-lg-3 text-center">
                     <label for="certificatetitle">Certificate Title :</label>
                     <input type="text" class="form-control input-field" placeholder="certificate title"
                         id="certificatetitle" name="certificatetitle" required />

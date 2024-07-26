@@ -7,7 +7,7 @@ check_login(); // Ensure the user is logged in
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['register_submit'])) {
         // Handle registration form submission
-        $sr_no = mysqli_real_escape_string($con, $_POST['srno']);
+        // $sr_no = mysqli_real_escape_string($con, $_POST['srno']);
         $certificate_title = mysqli_real_escape_string($con, $_POST['certificatetitle']);
         $registration_no = mysqli_real_escape_string($con, $_POST['registration_no']);
         $name = mysqli_real_escape_string($con, $_POST['name']);
@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $contact_no = mysqli_real_escape_string($con, $_POST['contact']);
         $college_name = mysqli_real_escape_string($con, $_POST['college_name']);
 
-        $sql = "INSERT INTO certificate (sr_no, certificate_title, registration_no, name, course, email, contact_no, course_duration_from, course_duration_to, college_name) 
-                VALUES ('$sr_no', '$certificate_title', '$registration_no', '$name', '$course', '$email', '$contact_no', '$course_duration_from', '$course_duration_to', '$college_name')";
+        $sql = "INSERT INTO certificate (certificate_title, registration_no, name, course, email, contact_no, course_duration_from, course_duration_to, college_name) 
+                VALUES ('$certificate_title', '$registration_no', '$name', '$course', '$email', '$contact_no', '$course_duration_from', '$course_duration_to', '$college_name')";
 
         if (mysqli_query($con, $sql)) {
             $message = '<div class="alert alert-success">Registration successful!</div>';

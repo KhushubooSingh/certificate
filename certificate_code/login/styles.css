@@ -43,6 +43,7 @@ form{
 .input-field{
     border: 1px solid #A9A9A9;
     background-color: #d2d2d2;
+    text-align: center;
 }
 
 .btn-submit{
@@ -92,3 +93,4 @@ form{
     height: 100vh; /* Full viewport height */
     background-color: rgba(0, 0, 0, 0.1); /* Slight background overlay for visibility */
 }
+
