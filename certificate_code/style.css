@@ -1,84 +1,63 @@
-.main {
-    width: 64%;
-    height: 400px;
-    /* background-color: antiquewhite; */
+body {
+    margin: 0; 
+    padding: 0; 
+    min-height: 100vh; 
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.05374649859943981) 35%, rgba(0,212,255,1) 100%);
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    background-position: center; 
 }
 
-.main-heading {
+
+.heading {
+    font-size: 2rem;
+    /* font-weight: bold; */
+    text-align: center;
+    margin-top: 20px;
     font-family: Georgia;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-color: black;
-    padding-bottom: 3px;
+    
 }
-
-.heading {
-    font-size: 20px;
-    font-family: Courier;
-}
-
-.custom-input {
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 12px;
     border: 2px solid #097179;
-    padding: 10px 20px;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    padding-bottom: 1px;
 }
 
-.custom-input:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
-}
-
-body {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 113, 121, 0.17970938375350143) 35%, rgba(0, 212, 255, 1) 100%);
-}
-
-.btn {
+.btn{
+    max-width: 150px;
     background-color: #318CE7;
     border: 1px solid #034694;
     font-weight: 500;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
-    border-radius: 12px;
-    border: 2px solid #097179;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.serach-heading{
+    font-size: 1.2rem;
+    font-family: Courier;
+    
 }
 
-
-h4{
-    text-decoration: underline;
-    font-size: 35px;
+.form-control {
+    box-sizing: border-box; /* Ensure padding and border are included in width */
 }
-
-form{
-    /* background-color: aqua; */
-    width: 70%;
-    /* background-color:#1F75FE; */
-    /* border-radius: 1rem;
-    border: 1.9px solid #2a52be; */
-}
-
-/* body{
-    background-color:#d2d2d2;
-} */
 
 .input-field{
-    border: 1px solid gray;
-    background-color: #d2d2d2;
+    border: 2px solid #097179;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    height: 45px;
+    width: 100%;
+    border-radius: 12px;
 }
 
-.btn-submit{
-    background-color:#318CE7;
-    border:1.5px solid #0066b2 ;
-    border-radius: 0.3rem;
-    width: 100px;
-    height: 40px;
-    color: black;
-
+h4{
+    width: 300px;
 }
+
