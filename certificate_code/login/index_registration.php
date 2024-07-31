@@ -20,7 +20,18 @@ if (isset($_GET['status'])) {
             break;
     }
 }
+
+// Include database connection
+include('db_connection.php'); // Include the database connection file
+
+// Fetch existing records from the database
+$sql = "SELECT * FROM certificate ORDER BY sr_no DESC";
+$result = mysqli_query($con, $sql);
+$certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +42,14 @@ if (isset($_GET['status'])) {
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles.css" />
     <title>Registration Form</title>
+
+    <style>
+        .table-container {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    </style>
+
 </head>
 <body>
     <div class="container-fluid">
@@ -44,7 +63,7 @@ if (isset($_GET['status'])) {
             <!-- Certificate Title -->
             <div class="row justify-content-center pt-5">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="certificatetitle">Certificate Title :</label>
+                    <label for="certificatetitle" class="title">Certificate Title :</label>
                     <input type="text" class="form-control input-field" placeholder="Certificate title"
                         id="certificatetitle" name="certificatetitle" required />
                 </div>
@@ -115,19 +134,56 @@ if (isset($_GET['status'])) {
             <!-- Submit Button -->
             <div class="row mx-auto text-center justify-content-center">
                 <div class="col-md-6 col-lg-4 d-flex justify-content-center mb-3">
-        <button type="submit" class="btn-submit" name="register_submit">
-            Submit
-        </button>
-    </div>
-    <div class="row mx-auto text-center justify-content-center">
+                    <button type="submit" class="btn-submit" name="register_submit">Submit</button>
+                </div>
+            </div>
+            <!-- back button -->
+            <div class="row mx-auto text-center justify-content-center">
                 <div class="col-md-6 col-lg-4 d-flex justify-content-center mb-3">
-        <button type="reset" id="backButton" class="btn-submit" name="register_submit">
-            Back
-        </button>
-    </div>
-</div>
+                    <button type="reset" id="backButton" class="btn-submit" name="register_submit">Back</button>
+                </div>
+            </div>
         </form>
     </div>
+
+    <!-- display existing record -->
+    <h4 class="text-center pt-5 pb-3">Existing Records</h4>
+        <div class="table-container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Certificate Title</th>
+                        <th>Registration No.</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Email</th>
+                        <th>Course Duration From</th>
+                        <th>Course Duration To</th>
+                        <th>Contact</th>
+                        <th>College Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($certificates as $cert): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($cert['sr_no']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['certificate_title']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['registration_no']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['name']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['course']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['email']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['course_duration_from']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['course_duration_to']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['contact_no']); ?></td>
+                        <td><?php echo htmlspecialchars($cert['college_name']); ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+    <!--  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
