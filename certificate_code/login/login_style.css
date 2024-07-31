@@ -1,6 +1,7 @@
 body{
-    /* background-color:#d2d2d2; */
-    background-image: url('pexels-ron-lach-10526883.jpg');
+    background-color:#d2d2d2;
+    /* background-image: url('pexels-ron-lach-10526883.jpg'); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.05374649859943981) 35%, rgba(0,212,255,1) 100%); */
 }
 
 

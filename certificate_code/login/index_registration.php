@@ -43,12 +43,12 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <link rel="stylesheet" href="styles.css" />
     <title>Registration Form</title>
 
-    <style>
+    <!-- <style>
         .table-container {
             max-width: 90%;
             margin: 0 auto;
         }
-    </style>
+    </style> -->
 
 </head>
 <body>
