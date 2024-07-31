@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Certificate Verification</title>
 </head>
+
 <body>
-    <h1 class="text-center main-heading">Certificate Verification</h1>
-    <div class="d-flex justify-content-center">
-        <img src="vlab.png" class="logo" alt="Logo">
-    </div>
-    <div class="container pt-5 main">
-        <div class="row">
+    <div class="container text-center">
+        <div class="d-flex flex-column justify-content-center align-items-center py-2">
+            <div class="heading">Certificate Verification</div>
+            <div class="logo mt-3">
+                <img src="vlab.png" alt="Logo">
+            </div>
+        </div>
+
+        <div class="row pt-4">
             <div class="col">
-                <h4 class="text-center heading">Search with Registration no:</h4>
-                <form action="search_registration.php" method="post">
-                    <div class="mb-3">
-                        <label for="registration_no" class="form-label"></label>
-                        <input type="text" id="registration_no" name="registration_no" class="form-control custom-input" required placeholder="Enter the Registration Number:">
+                <form action="search_registration.php" method="POST">
+                    <div>
+                        <h4 class="serach-heading text-break">Search by Registration no.</h4>
                     </div>
-                    <div class="d-flex justify-content-center">
+                    <input type="text" id="registration_no" name="registration_no" class="form-control input-field"
+                        placeholder="Enter your registration no :" required>
+
+                    <div class="pt-3">
                         <button type="submit" class="btn" name="search_by">Search</button>
                     </div>
                 </form>
             </div>
             <div class="col">
-                <h4 class="text-center heading">Search with Your Name:</h4>
-                <form action="search_name.php" method="post">
-                    <div class="mb-3">
-                        <label for="name" class="form-label"></label>
-                        <input type="text" id="name" name="name" class="form-control custom-input" required placeholder="Enter the Name:">
+                <form action="search_name.php" method="POST">
+                    <div>
+                        <h4 class="serach-heading text-break">Search by Registered name</h4>
                     </div>
-                    <div class="d-flex justify-content-center">
+                    <input type="text" id="name" name="name" class="form-control input-field"
+                        placeholder="Enter your registered name :" required>
+
+                    <div class="pt-3">
                         <button type="submit" class="btn" name="search_by">Search</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <!-- <script src="script.js"></script> -->
 </body>
+
 </html>
