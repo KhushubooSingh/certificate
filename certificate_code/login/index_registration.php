@@ -43,17 +43,10 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <link rel="stylesheet" href="styles.css" />
     <title>Registration Form</title>
 
-    <!-- <style>
-        .table-container {
-            max-width: 90%;
-            margin: 0 auto;
-        }
-    </style> -->
-
 </head>
 <body>
     <div class="container-fluid">
-        <h4 class="text-center pt-5 pb-5">Registration Form</h4>
+        <h4 class="text-center pt-5 pb-2">Registration Form</h4>
         <?php if (!empty($message)) { ?>
             <div class="text-center mb-3">
                 <?php echo $message; ?>
@@ -61,9 +54,9 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <?php } ?>
         <form class="mx-auto" action="registration.php" method="POST" onsubmit="return validateDates()">
             <!-- Certificate Title -->
-            <div class="row justify-content-center pt-5">
+            <div class="row justify-content-center pt-1">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="certificatetitle" class="title">Certificate Title :</label>
+                    <label for="certificatetitle" class="title"></label>
                     <input type="text" class="form-control input-field" placeholder="Certificate title"
                         id="certificatetitle" name="certificatetitle" required />
                 </div>
@@ -71,7 +64,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <!-- Registration No -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="registration_no">Registration No. :</label>
+                    <label for="registration_no"></label>
                     <input type="text" class="form-control input-field" placeholder="Registration no"
                         id="registration_no" name="registration_no" required />
                 </div>
@@ -79,14 +72,14 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <!-- Name -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="name">Name :</label>
+                    <label for="name"></label>
                     <input type="text" class="form-control input-field" placeholder="Name" id="name" name="name" required />
                 </div>
             </div>
             <!-- Course -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="course">Course :</label>
+                    <label for="course"></label>
                     <input type="text" class="form-control input-field" placeholder="Course" id="course"
                         name="course" required />
                 </div>
@@ -94,7 +87,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <!-- Email -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="email">Email Id :</label>
+                    <label for="email"></label>
                     <input type="email" class="form-control input-field" placeholder="Email id" id="email"
                         name="email" required />
                 </div>
@@ -102,7 +95,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <!-- Course Duration From -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="duration_from">Course Duration From :</label>
+                    <label for="duration_from"></label>
                     <input type="date" class="form-control input-field" placeholder="Course duration from"
                         id="duration_from" name="duration_from" required />
                 </div>
@@ -110,7 +103,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <!-- Course Duration To -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="duration_to">Course Duration To :</label>
+                    <label for="duration_to"></label>
                     <input type="date" class="form-control input-field" placeholder="Course duration to"
                         id="duration_to" name="duration_to" required />
                 </div>
@@ -118,7 +111,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <!-- Contact -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="contact">Contact :</label>
+                    <label for="contact"></label>
                     <input type="text" class="form-control input-field" placeholder="Contact" id="contact"
                         name="contact" required />
                 </div>
@@ -126,7 +119,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <!-- College Name -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
-                    <label for="college_name">College Name :</label>
+                    <label for="college_name"></label>
                     <input type="text" class="form-control input-field" placeholder="College name" id="college_name"
                         name="college_name" required />
                 </div>

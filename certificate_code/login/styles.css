@@ -1,37 +1,41 @@
 
 body {
-    /* background-image: url('pexels-ron-lach-10526883.jpg'); */
+    margin: 0; 
+    padding: 0; 
+    min-height: 100vh; 
+    background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.05374649859943981) 35%, rgba(0,212,255,1) 100%);
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    background-position: center; 
 }
 
 
 
 h4{
+    font-size: 2rem;
+    text-align: center;
+    font-family: Georgia;
     text-decoration: underline;
-    font-size: 35px;
+    text-decoration-thickness: 2px;
 }
 /* --- */
 
 form{
-    /* background-color: aqua; */
     width: 70%;
-    /* background-color:#708090; */
     background-color:none;
-    border-radius: 15px;
-    /* border: 1.5px solid gray; */
-    
+    border-radius: 15px;   
 }
 
 
 .input-field{
-    /* border: 1px solid #A9A9A9; */
-    /* background-color: #d2d2d2; */
     text-align: center;
     border: 2px solid #097179;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    /* height: 45px;
-    width: 100%; */
     border-radius: 12px;
+    font-size: 1.2rem;
+    font-family: Courier;
 }
 
 .btn-submit{
@@ -42,10 +46,6 @@ form{
     background-color: #318CE7;
     font-weight: 600;
     border: 1px solid #034694;
-    /* max-width: 150px;
-    background-color: #318CE7;
-    border: 1px solid #034694;
-    font-weight: 500; */
 
 }
 

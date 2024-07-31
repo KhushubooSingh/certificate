@@ -1,39 +1,50 @@
 body{
-    /* background-color:#d2d2d2; */
-    /* background-image: url('pexels-ron-lach-10526883.jpg'); */
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.05374649859943981) 35%, rgba(0,212,255,1) 100%);
 }
 
 
 form{
-    width: 24%;
-    background-color:#708090;
+    width: 100%;
     padding: 50px;
     border-radius: 15px;
     margin-top: 150px;
-    border: 1.5px solid gray;
 }
+   
 
 .btn{
-    background-color: #d2d2d2;
+    border-radius: 0.3rem;
+    width: 100px;
+    height: 40px;
+    color: black;
+    background-color: #318CE7;
     font-weight: 600;
-    border: 1px solid #949398FF;
+    border: 1px solid #034694;
 }
 
 h4{
+    font-size: 2rem;
+    text-align: center;
+    font-family: Georgia;
     text-decoration: underline;
-}
+    text-decoration-thickness: 2px;
 
-#username{
-   border: 1px solid #949398FF;
-   background-color: #e0e0e0;
 }
-
-#password{
-    border: 1px solid #949398FF;
-    background-color: #e0e0e0;
-} 
 
 .input{
-    background-color: whitesmoke;
+    text-align: center;
+    border: 2px solid #097179;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-family: Courier;
+}
+
+.field-name{
+    display: flex;
+    color: #002244;
+    font-size: 1.2rem;
+    font-family: Courier;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
