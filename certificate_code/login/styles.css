@@ -4,13 +4,13 @@ body {
     padding: 0; 
     min-height: 100vh; 
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.05374649859943981) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(150,150,150,1) 0%, rgba(150,150,150,1) 35%, rgba(0,212,255,1) 100%);
     background-size: cover; 
     background-attachment: fixed; 
     background-repeat: no-repeat; 
     background-position: center; 
+    position: relative;
 }
-
 
 
 h4{
@@ -25,7 +25,8 @@ h4{
 form{
     width: 70%;
     background-color:none;
-    border-radius: 15px;   
+    border-radius: 15px; 
+    line-height: 0.2;  
 }
 
 
@@ -34,7 +35,7 @@ form{
     border: 2px solid #097179;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     border-radius: 12px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: Courier;
 }
 
@@ -111,22 +112,75 @@ form{
 
 .table {
     background-color:#87CEFA;
-    color: #fff; /* Text color for better contrast */
+    color: black; /* Text color for better contrast */
 }
 
 .table th {
     background-color: #003366; /* Dark blue for headers */
     color: #fff; /* White text for headers */
 }
-.table td {
-    background-color: #00509e; /* Slightly lighter blue for table cells */
+.table tbody tr:first-child {
+    background-color: #f8f9fa; /* Color for the first row */
 }
+
 .table tbody tr:nth-child(even) {
-    background-color: #003d66; /* Alternating row colors */
+    background-color:#EDEADE; /* Color for even rows */
 }
+
+.table tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* Color for odd rows */
+}
+
 .table tbody tr:hover {
-    background-color: #004080; /* Hover effect */
+    background-color: lightgray;
 }
+
+.table-container th {
+    text-align: center;
+    font-size: small;
+}
+
+.table-container td {
+    text-align: center;
+    font-size: 11px;
+}
+
+
+
+.header-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: center; /* Vertically centers content */
+    padding: 10px; /* Adjust padding as needed */
+    position: relative; /* Ensure positioning context */
+    max-width: 1400px; /* Optional: limit container width */
+    margin: 0 auto; /* Center container horizontally */
+}
+
+#logout-btn {
+    padding: 10px 20px; /* Optional: adjust padding */
+    background-color: #007bff; /* Optional: button background color */
+    color: white; /* Optional: button text color */
+    border: none; /* Optional: remove default border */
+    border-radius: 5px; /* Optional: rounded corners */
+    cursor: pointer; /* Optional: cursor style */
+    border: 1px solid #034694;
+    color: black;
+    font-weight: 600;
+
+}
+
+.user-info {
+    font-size: 16px; /* Adjust font size as needed */
+    color: #333; /* Text color */
+    margin-right: 20px; /* Gap between username and button */
+    padding: 8px 12px; /* Add padding for spacing */
+    /* font-weight: bold;  */
+    display: flex; /* Flexbox for better alignment */
+    align-items: center; /* Vertically center text */
+}
+
+
 
 
 

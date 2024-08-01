@@ -1,10 +1,17 @@
 <?php
 session_start(); // Start the session
 
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    $username = $_SESSION['username']; // Get username from session
+} else {
+    $username = 'Guest'; // Default if not logged in
+}
+
 // Function to check if the user is logged in
 function check_login() {
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-        header('Location: index_login.php'); // Redirect to login page if not logged in
+        header('Location: index.php'); // Redirect to login page if not logged in
         exit;
     }
 }
@@ -13,7 +20,7 @@ function check_login() {
 function logout() {
     $_SESSION = array(); // Clear all session variables
     session_destroy(); // Destroy the session
-    header('Location: index_login.php'); // Redirect to login page
+    header('Location: index.php'); // Redirect to login page
     exit;
 }
 ?>

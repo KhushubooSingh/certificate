@@ -1,5 +1,6 @@
 <?php
 include('session.php'); // Include the session management file
+
 check_login(); // Ensure the user is logged in
 
 // Check for messages in the URL
@@ -25,9 +26,23 @@ if (isset($_GET['status'])) {
 include('db_connection.php'); // Include the database connection file
 
 // Fetch existing records from the database
-$sql = "SELECT * FROM certificate ORDER BY sr_no DESC";
+$sql = "SELECT
+    sr_no, 
+    certificate_title,
+    registration_no,
+    name,
+    course,
+    email,
+    DATE_FORMAT(STR_TO_DATE(course_duration_from, '%d-%m-%Y'), '%d-%m-%Y') AS course_duration_from,
+    DATE_FORMAT(STR_TO_DATE(course_duration_to, '%d-%m-%Y'), '%d-%m-%Y') AS course_duration_to,
+    contact_no,
+    college_name
+FROM certificate
+ORDER BY 
+sr_no DESC";
 $result = mysqli_query($con, $sql);
 $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 
 ?>
 
@@ -46,6 +61,11 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 <body>
     <div class="container-fluid">
+    <div class="header-container">
+        <div class="user-info"><?php echo  htmlspecialchars($_SESSION['username']); ?></div>
+        <button type="submit" id="logout-btn" name="logout-btn">Logout</button>    
+    </div>
+    <!-- <button type="submit" id="logout-btn"  name="logout-btn">Logout</button> -->
         <h4 class="text-center pt-5 pb-2">Registration Form</h4>
         <?php if (!empty($message)) { ?>
             <div class="text-center mb-3">
@@ -96,7 +116,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
                     <label for="duration_from"></label>
-                    <input type="date" class="form-control input-field" placeholder="Course duration from"
+                    <input type="text" class="form-control input-field" placeholder="Course duration from (dd-mm-yyyy)"
                         id="duration_from" name="duration_from" required />
                 </div>
             </div>
@@ -104,7 +124,7 @@ $certificates = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-3">
                     <label for="duration_to"></label>
-                    <input type="date" class="form-control input-field" placeholder="Course duration to"
+                    <input type="text" class="form-control input-field" placeholder="Course duration to (dd-mm-yyyy)"
                         id="duration_to" name="duration_to" required />
                 </div>
             </div>

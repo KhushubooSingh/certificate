@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
+        // Sanitize input
         $username = stripcslashes($username);
         $password = stripcslashes($password);
 
@@ -21,17 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
-        if ($result) {
-            $count = mysqli_num_rows($result);
-            if ($count == 1) {
-                $_SESSION['loggedin'] = true; // Set session variable
-                header("Location: index_registration.php"); // Redirect to registration page
-                exit();
-            } else {
-                echo "<h1>Login failed. Invalid username or password.</h1>";
-            }
+        if ($result && mysqli_num_rows($result) == 1) {
+            // Fetch user details
+            $user = mysqli_fetch_assoc($result);
+
+            // Set session variables
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $user['username']; // Use the correct username field
+            header("Location: index_registration.php"); // Redirect to registration page
+            exit();
         } else {
-            echo "Error executing query: " . mysqli_error($con);
+            echo "<h1>Login failed. Invalid username or password.</h1>";
         }
     }
 }
