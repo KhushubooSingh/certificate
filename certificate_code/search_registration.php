@@ -21,17 +21,17 @@
 <body>
     <div class="container">
         <?php
-        // $servername = "sg2nlmysql33plsk.secureserver.net:3306";
-        // $username = "vlcertiverify";
-        // $password = "5Ii5pw3$1";
-        // $dbname = "ph15958919426_vlabiitkcerti";
+        $servername = "sg2nlmysql33plsk.secureserver.net:3306";
+        $username = "vlcertiverify";
+        $password = "5Ii5pw3$1";
+        $dbname = "ph15958919426_vlabiitkcerti";
 
         // -------------------temp database--------------
         
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "vlab_iitk_db";
+        // $servername = "localhost";
+        // $username = "root";
+        // $password = "";
+        // $dbname = "vlab_iitk_db";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
